@@ -39,14 +39,14 @@ let lightColor = (element, number) => {
 
 //CHECA SE OS BOTÕES CLICADOS SÃO OS MESMOS DA ORDEM GERADA NO JOGO
 let checkOrder = () => {
-    for(let i in clickOrder){
+    for(let i in clickedOrder){
         if(clickedOrder[i] != order[i]){
             gameOver();
             break;
         }
     }
     if(clickedOrder.length == order.length){
-        alert('Pontuação: ${score} \n Você acertou! Iniciando Próximo nível! ');
+        alert(`Pontuação: ${score} \n Você acertou! Iniciando Próximo nível!`);
         nextLevel();
     }
 }
@@ -83,7 +83,7 @@ let nextLevel = () => {
 
 //FUNÇÃO PARA GAME OVER
 let gameOver = () => {
-    alert('Pontuação: ${score}! \n Você perdeu o jogo! \n Clique em OK para iniciar um novo jogo');
+    alert(`Pontuação: ${score}! \n Você perdeu o jogo! \n Clique em OK para iniciar um novo jogo`);
     order = [];
     clickedOrder = [];
 
@@ -100,10 +100,10 @@ let playGame = () => {
 
 
 //CLICK PARA AS CORES
-green.oncliCk = () => click(0);
-red.oncliCk = () => click(1);        
-yellow.oncliCk = () => click(2);
-blue.oncliCk = () => click(3);
+green.onclick = () => click(0);
+red.onclick = () => click(1);        
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
 
 
 //INICIO DO JOGO
